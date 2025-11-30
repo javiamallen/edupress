@@ -33,9 +33,17 @@ This project demonstrates proficiency in **Full Stack development (Front End and
 
 * **Advanced Git Flow:** Demonstration of a professional workflow using feature branches (`develop` / `feature/*`), which ensures code integrity during merges.
 
+
 ---
 **Developer:** [Javiam Allen ♥ ](https://www.linkedin.com/in/javierallend1/)
 **GitHub User:** Javiamallen
 **Local Demo URL:** `edupress.local`
 
+# 🚀 App Working here
 
+
+## 🖼️ Interface
+
+![EduPress Pro Screenshot - Corporate Interface](image.png)
+<br>
+<br>
