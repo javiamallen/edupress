@@ -34,18 +34,18 @@ function edu_press_shortcode_lista_estudiantes() {
     $estudiantes = edu_press_obtener_datos_usuarios();
     
     if ( empty( $estudiantes ) ) {
-        return '<p>No fue posible cargar la lista de integración de datos en este momento.</p>';
+        return '<p>Unable to load the integration data</p>';
     }
 
     // Creamos la estructura HTML para mostrar los datos como tarjetas (cards)
     $output = '<div class="edu-press-api-widget">';
-    $output .= '<h3>Panel de Integración de Datos (Prueba de Conexión API REST)</h3>';
+    $output .= '<h3>Data Integration Panel (REST API Proof of Concept)</h3>';
     $output .= '<ul>';
 
     foreach ( $estudiantes as $estudiante ) {
         // Utilizamos funciones de sanitización (esc_html, esc_attr) para seguridad
         $output .= '<li>';
-        $output .= '<strong>Estudiante:</strong> ' . esc_html( $estudiante['name'] ) . '<br>';
+        $output .= '<strong>Student:</strong> ' . esc_html( $estudiante['name'] ) . '<br>';
         $output .= '<strong>Web:</strong> <a href="http://' . esc_attr( $estudiante['website'] ) . '" target="_blank">' . esc_html( $estudiante['website'] ) . '</a>';
         $output .= '</li>';
     }
