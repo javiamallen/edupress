@@ -28,6 +28,15 @@
     transition: all 0.3s ease; /* Transición suave para el JS */
 }
 
+/* Título de la sección */
+.edu-press-api-widget h3 {
+    color: #2c3e50;
+    font-size: 1.5em;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
 /* Media Query para Diseño Responsivo (el factor "Guau" en CSS) */
 @media (min-width: 600px) {
     .edu-press-api-widget li {
