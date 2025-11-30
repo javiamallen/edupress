@@ -1,37 +1,24 @@
-# 🚀 EduPress Pro: Optimized Full Stack E-learning Platform
+# ⚙️ Feature: API Integration and Back End Optimization
 
-This project demonstrates proficiency in **Full Stack development (Front End and Back End)** within the WordPress ecosystem, with a rigorous focus on **performance optimization, security, scalability, and external systems integration.**
+This branch focuses on building the core logic and data integration layer for the EduPress Pro application, adhering strictly to WordPress security standards and PHP best practices.
 
 ---
 
-## 🛠️ Technology Stack and Development Environment
+## 🛠️ Work Completed in This Branch (Back End Focus)
 
-| Category | Technology / Tool | Application in EduPress Pro |
+| Feature | Description | Technical Implementation |
 | :--- | :--- | :--- |
-| **Local Environment** | **Local by Flywheel** (Free), VS Code | Used for hosting and professional development in a clean Nginx/PHP/MySQL stack. |
-| **Back End & Core** | **PHP 8.2+**, **MySQL 8.0+** | Used for Core Plugin development, Back End logic, and REST API management. |
-| **Advanced Front End** | **JavaScript**, HTML5, CSS3 | **JavaScript:** DOM manipulation for interactivity (Form/API List). **CSS:** Responsive design using Flexbox/Grid and corporate styling. |
-| **Platform** | **WordPress 6.x** | Development based on Child Themes, use of Core Functionality Plugins, and Gutenberg-compatible layout. |
+| **API Consumption** | Implemented the necessary logic to consume and process data from an external REST API for integration into the Front End. | **PHP:** Used `wp_remote_get()`—the secure, native WordPress function—to handle the external HTTP request. |
+| **Data Processing** | The received JSON data is decoded and parsed to extract specific fields (name, website) required for the application. | **PHP:** Implemented `json_decode` to convert JSON strings into usable PHP arrays. |
+| **Plugin Core Development** | All Back End logic, including the API call and data handling, is contained within the **`edu-press-core.php` plugin**. | **Architecture:** Separation of concerns ensured by isolating PHP functionality from the theme layer. |
+| **Data Visualization Hook** | Created a native WordPress element to display the data. | **WordPress:** Developed the `[lista_api_estudiantes]` shortcode to render the API results in the front end. |
+| **Service Used** | Proof of concept using a simulated data service. | **Tool:** JSONPlaceholder (public, free, fictional REST API). |
 
 ---
 
-## 💡 Key Technical Features (The "Wow" Factor)
+## 🌳 Workflow Status
 
-### 1. REST API Integration (Full Stack - PHP Logic)
-
-* **Purpose:** To demonstrate the ability to integrate external systems and manage data transfer between servers (Full Stack capability).
-* **Service Used:** We utilized **JSONPlaceholder**, a **free and public REST API (fictional)** designed for simulation and prototyping.
-* **Back End Implementation:** The code resides in the **Core Plugin (`edu-press-core`)** and uses the secure WordPress function (`wp_remote_get`) to consume the endpoint, process the JSON, and render the "Data Integration Panel" on the Home page.
-
-### 2. Component Development and Performance (Front End)
-
-* **Design (CSS):** The site uses clean styles, modern typography, and a CSS Grid/Flexbox layout to present the data in a **responsive card format**, simulating a clean desktop application interface (Articulate style).
-* **Interactivity (JavaScript):** The `main.js` file implements validation of forms and handling of *mouse events* on the API list, demonstrating DOM manipulation and smooth UX.
-* **Performance Optimization:** JavaScript files are loaded **non-blocking** (`wp_enqueue_script` with the 'true' argument in the footer), prioritizing the initial site load time (WPO).
-
-### 3. Code Management and Workflow
-
-* **Advanced Git Flow:** Demonstration of a professional workflow using feature branches (`develop` / `feature/*`), which ensures code integrity during merges.
+* **Ready for Merge:** This core Back End functionality has been successfully tested locally and is ready to be merged into the `develop` branch.
 
 
 ---
