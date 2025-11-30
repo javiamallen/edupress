@@ -39,7 +39,7 @@ This project demonstrates proficiency in **Full Stack development (Front End and
 **GitHub User:** Javiamallen
 **Local Demo URL:** `edupress.local`
 
-# 🚀 App Working here
+## 🚀 App Working here
 
 
 ## 🖼️ Interface
