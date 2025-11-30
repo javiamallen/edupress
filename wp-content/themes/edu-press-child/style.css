@@ -1,9 +1,38 @@
-/*
-Theme Name: EduPress Pro Child Theme
-Theme URI: (Tu URL de GitHub)
-Description: Tema Hijo diseñado para el desarrollo Full Stack de EduPress Pro.
-Author: Javiera Allende
-Author URI: (Tu LinkedIn o Portfolio)
-Template: twentytwentythree 
-Version: 1.0.0
-*/
+/* --- ESTILOS MODERNOS Y RESPONSIVOS --- */
+
+/* Contenedor principal de la lista de API */
+.edu-press-api-widget {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo para los ítems de la lista */
+.edu-press-api-widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.edu-press-api-widget li {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 5px solid #0056b3; 
+    background-color: #fff;
+    border-radius: 4px;
+    /* Usamos Flexbox para el diseño, demostrando dominio de CSS3 */
+    display: flex; 
+    flex-direction: column; /* Por defecto: Apilar en móviles */
+    transition: all 0.3s ease; /* Transición suave para el JS */
+}
+
+/* Media Query para Diseño Responsivo (el factor "Guau" en CSS) */
+@media (min-width: 600px) {
+    .edu-press-api-widget li {
+        /* En pantallas más grandes, distribuimos el contenido horizontalmente */
+        flex-direction: row; 
+        justify-content: space-between;
+    }
+}
