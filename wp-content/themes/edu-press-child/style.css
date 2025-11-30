@@ -1,49 +1,183 @@
-/* --- ESTILOS MODERNOS Y RESPONSIVOS --- */
+/*
+Theme Name: EduPress Pro Child Theme
+Theme URI: https://github.com/javiamallen/edupress
+Description: Tema Hijo diseñado para el desarrollo Full Stack de EduPress Pro.
+Author: Javiera Allende
+Author URI: (Tu LinkedIn o Portfolio)
+Template: twentytwentythree 
+Version: 1.0.0
+*/
 
-/* Contenedor principal de la lista de API */
-.edu-press-api-widget {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
+/* --- Estilos Globales y Contenedores Principales (Home Corporativo) --- */
 
-/* Estilo para los ítems de la lista */
-.edu-press-api-widget ul {
-    list-style: none;
+body {
+    background-color: #f4f7f9; /* Fondo muy suave y corporativo */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; /* Tipografía limpia y moderna */
+    margin: 0; 
     padding: 0;
 }
 
-.edu-press-api-widget li {
-    padding: 15px;
-    margin-bottom: 10px;
-    border-left: 5px solid #0056b3; 
-    background-color: #fff;
-    border-radius: 4px;
-    /* Usamos Flexbox para el diseño, demostrando dominio de CSS3 */
-    display: flex; 
-    flex-direction: column; /* Por defecto: Apilar en móviles */
-    transition: all 0.3s ease; /* Transición suave para el JS */
+/* Centrar el contenido y darle un aspecto de 'App' */
+.wp-site-blocks, .edu-press-api-widget {
+    max-width: 1200px; /* Ancho máximo para el layout */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Título de la sección */
-.edu-press-api-widget h3 {
-    color: #2c3e50;
-    font-size: 1.5em;
-    border-bottom: 2px solid #0056b3;
+/* Estilo para el contenedor general del contenido principal */
+.site-content { 
+    background-color: #ffffff; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.05); 
+    min-height: 100vh;
+}
+
+/* Estilo para los títulos de la página */
+h1 {
+    color: #0056b3; 
+    font-weight: 700;
+    text-align: center;
+    padding-top: 40px;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
-/* Media Query para Diseño Responsivo (el factor "Guau" en CSS) */
-@media (min-width: 600px) {
-    .edu-press-api-widget li {
-        /* En pantallas más grandes, distribuimos el contenido horizontalmente */
-        flex-direction: row; 
-        justify-content: space-between;
-    }
+/* Estilo para el texto de introducción */
+.wp-block-paragraph {
+    text-align: center;
+    color: #666;
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
 }
 
-/* changes in wp
+
+/* --- 1. Estilos del Widget de la API (Tarjetas / Grilla) --- */
+
+.edu-press-api-widget {
+    /* [Ya tienes estos estilos base] */
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #ffffff; 
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.edu-press-api-widget ul {
+    list-style: none; 
+    padding: 0;
+    
+    /* Usamos Grilla para que se distribuyan en varias columnas en escritorio */
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px; 
+    margin-bottom: 20px;
+}
+
+.edu-press-api-widget li {
+    padding: 15px;
+    border: 1px solid #ddd; /* Borde de tarjeta */
+    background-color: #f9f9f9; /* Fondo suave para la tarjeta */
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra sutil a los ítems */
+    transition: all 0.3s ease; 
+    
+    /* Maquetación interna */
+    display: flex;
+    flex-direction: column; 
+}
+
+.edu-press-api-widget li:hover {
+    transform: translateY(-2px); /* Pequeño levantamiento al pasar el ratón */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.edu-press-api-widget li strong {
+    color: #0056b3; 
+    display: block;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.edu-press-api-widget h3 {
+    color: #1a1a1a;
+    font-size: 1.8em;
+    border-bottom: 3px solid #0056b3;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+
+/* --- 2. Estilos del Formulario de Registro (Consistencia) --- */
+
+.edu-press-registro-container {
+    max-width: 500px;
+    margin: 40px auto; 
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* [Resto de estilos de formulario, botones y validación] */
+
+.edu-press-registro-container h2 {
+    color: #0056b3;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+#btn-registrar {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btn-registrar:hover {
+    background-color: #004085;
+}
+
+.mensaje-oculto {
+    display: none;
+}
+
+#mensaje-validacion {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}

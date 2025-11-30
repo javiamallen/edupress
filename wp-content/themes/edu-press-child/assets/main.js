@@ -1,29 +1,41 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Seleccionamos la lista generada por el PHP del plugin core, usando la clase CSS
-    const listaEstudiantes = document.querySelector('.edu-press-api-widget ul');
-    
-    // Si la lista no existe en la página, el script se detiene (Good Practice)
-    if (!listaEstudiantes) return; 
+// --- Lógica del Formulario ---
+const form = document.getElementById('registro-estudiante-form');
+const mensaje = document.getElementById('mensaje-validacion');
 
-    // Seleccionamos todos los ítems de la lista
-    const estudianteItems = listaEstudiantes.querySelectorAll('li');
-    
-    // Recorremos cada ítem para añadir la interacción
-    estudianteItems.forEach(item => {
-        
-        // 1. Event Listener para cuando el mouse ENTRA al elemento
-        item.addEventListener('mouseover', () => {
-            item.style.backgroundColor = '#f0fff5'; // Color suave para resaltar
-            item.style.transform = 'translateX(5px)'; // Efecto sutil para demostrar manipulación del DOM
-            item.style.transition = '0.3s'; // Transición suave
-        });
-        
-        // 2. Event Listener para cuando el mouse SALE del elemento
-        item.addEventListener('mouseout', () => {
-            item.style.backgroundColor = 'transparent';
-            item.style.transform = 'translateX(0)';
-        });
+if (form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Detiene el envío normal del formulario
+
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim();
+
+        // Validación
+        if (nombre === '' || email === '') {
+            mensaje.textContent = 'Por favor, completa todos los campos.';
+            mensaje.style.backgroundColor = '#ffdddd'; // Fondo rojo claro para error
+            mensaje.classList.remove('mensaje-oculto');
+            return;
+        }
+
+        // Validación de correo electrónico (simple)
+        if (!email.includes('@') || !email.includes('.')) {
+            mensaje.textContent = 'El correo electrónico no es válido.';
+            mensaje.style.backgroundColor = '#ffdddd';
+            mensaje.classList.remove('mensaje-oculto');
+            return;
+        }
+
+        // SIMULACIÓN de Envío (Clave para la demo Full Stack)
+        mensaje.textContent = `¡Registro exitoso! ${nombre} ha sido agregado al sistema.`;
+        mensaje.style.backgroundColor = '#ddffdd'; // Fondo verde claro para éxito
+        mensaje.classList.remove('mensaje-oculto');
+
+        // Limpiar el formulario
+        form.reset();
+
+        // Ocultar el mensaje después de 3 segundos
+        setTimeout(() => {
+            mensaje.classList.add('mensaje-oculto');
+        }, 3000);
     });
-    
-    console.log('EduPress Pro Scripts Loaded: JS interaction enabled.'); // Mensaje de prueba en consola
-});
+}
